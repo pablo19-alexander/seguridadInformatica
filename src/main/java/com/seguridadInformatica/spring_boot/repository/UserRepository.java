@@ -1,13 +1,11 @@
-package repository;
+package com.seguridadInformatica.spring_boot.repository;
 
+import com.seguridadInformatica.spring_boot.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
-import entity.User;
 
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-
     Optional<User> findByEmail(String email);
-
-    Optional<User> findByNit(Long nit);
+    boolean existsByEmail(String email);
 }
