@@ -21,6 +21,7 @@ public class AuthController {
 
     @PostMapping("/register")
     public String register(@RequestBody @Valid RegisterRequest request) {
+        System.out.println("¡Estoy recibiendo el request!");
         userService.register(request);
         return "User registered";
     }
